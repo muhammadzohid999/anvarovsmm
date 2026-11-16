@@ -901,12 +901,7 @@ async def main():
     dp = Dispatcher()
     dp.include_router(router)
     print("🚀 Anvarov Muhammadzoxid || SMM boti to'liq ishga tushdi!")
-    await dp.start_polling(bot)
-
-
-if __name__ == "__main__":
-    asyncio.run(main())
-    # Render port talabini qondirish uchun kichik veb-server
+    # Render port talabini qondirish uchun veb-server
     import os
     from aiohttp import web
     
@@ -920,3 +915,8 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
     site = web.TCPSite(runner, "0.0.0.0", port)
     await site.start()
+    await dp.start_polling(bot)
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
